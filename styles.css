@@ -1,0 +1,28 @@
+body{
+    background-color: black;
+}
+.centerTag{
+    display: flex;
+    justify-content: center;
+}
+.form-control{
+    width: 500px;
+}
+.imgControler{
+    width: 450px;
+    height: 500px;
+}
+.Product{
+    display: flex;
+    flex-direction:column;
+}
+.divMayor{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botonFinalizar{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

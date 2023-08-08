@@ -1,0 +1,6 @@
+const Logueados = []                                      
+const BotonLog = document.querySelector("#botonLogueo")
+
+BotonLog.addEventListener("click",() => {
+    
+})
