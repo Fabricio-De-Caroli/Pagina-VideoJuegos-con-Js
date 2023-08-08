@@ -25,7 +25,7 @@ const productos= [
 const miCarrito = []
 
 function Productos(){
-    alert(`Los productos disponibles en la tienda son ${productos[0].nombre}${productos[1].nombre}`)
+    alert(`Los productos disponibles en la tienda son: \n${productos[0].nombre}\n${productos[1].nombre}\n${productos[2].nombre}`)
     let elejirProducto = prompt("Porfavor elija un videojuego o escriba cancelar paara cancelar la compra(1,2,3):");
     while(elejirProducto != "finalizar"){
         miCarrito.push(productos[elejirProducto - 1])
