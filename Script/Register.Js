@@ -45,6 +45,6 @@ BotonReg.addEventListener("click",()=> {
         console.log(FormUsuario);
         Registrados.push(FormUsuario);
         localStorage.setItem("Registrados",JSON.stringify(Registrados));
-        /* ruteo() */
+        ruteo()
     }
 })
