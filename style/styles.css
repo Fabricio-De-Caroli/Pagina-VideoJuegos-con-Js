@@ -1,6 +1,6 @@
-body{
+/* body{
     background-color: black;
-}
+} */
 .centerTag{
     display: flex;
     justify-content: center;
@@ -19,10 +19,15 @@ body{
 .divMayor{
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
 }
 
 .botonFinalizar{
     display: flex;
     justify-content: center;
     margin-top: 50px;
+}
+.ColorURL{
+    text-decoration: none;
+    color: white;
 }
