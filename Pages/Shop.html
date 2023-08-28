@@ -3,6 +3,8 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -19,7 +21,7 @@
             <img src="../Img/red-dead-redemption-2-2019101812583956_1.jpg" class="card-img-top" alt="Red Death redemption 2 Image">
             <div class="card-body">
                 <h5 class="card-title">Red Dead Redemption 2</h5>
-                <p class="card-text">Precio: 60usd</p>
+                <p class="card-text">Precio: 50usd</p>
                 <a href="#" class="btn btn-primary" id="ComprarRDR2">comprar</a>
             </div>
         </div>
@@ -49,10 +51,13 @@
         </div>
     </div>
     <div class="botonFinalizar">
-        <button type="submit" id="finCompra">Finalizar Compra</button>
+        <button type="submit" class="btn btn-primary" id="finCompra">Ver Carrito</button>
+        <button type="submit" class="btn btn-primary" id="BorrarCompra">Borrar Carrito</button>
     </div>
     <script src="../Script/Shop.Js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>
