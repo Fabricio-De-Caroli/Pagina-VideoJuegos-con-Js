@@ -7,7 +7,8 @@ const productos= [
         genero: 'Acción y Aventura',
         precio: 50,
         stock: 7,
-        id: 1
+        id: 1,
+        item: 1
     },
     {
         nombre: `Need for speed: rivals `,
@@ -15,7 +16,8 @@ const productos= [
         genero: `Carreras`,
         precio: 30,
         stock: 9,
-        id: 2
+        id: 2,
+        item: 1
     },
     {
         nombre: 'Borderlands 3 ',
@@ -23,7 +25,8 @@ const productos= [
         genero: 'Acción y Aventura',
         precio: 60,
         stock: 10,
-        id: 3
+        id: 3,
+        item: 1
     },
     {
         nombre: `Forza Horizon 5 `,
@@ -31,7 +34,8 @@ const productos= [
         genero: `Carreras`,
         precio: 60 ,
         stock: 5,
-        id: 5
+        id: 4,
+        item: 1
     }
 ]
 const miCarrito = []
@@ -44,30 +48,20 @@ const BotonBorrar = document.querySelector("#BorrarCompra")
 const mostrarCarrito = document.createElement("p");
 const botonConfCompra = document.createElement("button");
 
-let sumar= (id) => {
-    let itemSeleccionado= id;
-    let busqueda= miCarrito.find((x) => x.id === itemSeleccionado.id);
+const sumar= (id, index) => {
+    const itemSeleccionado= id;
+    console.log(itemSeleccionado)
+    const busqueda= miCarrito.find((x) => x.id == itemSeleccionado);
     console.log(busqueda)
-    if (busqueda === undefined) {
-        /* miCarrito.push({
-            
-            id: itemSeleccionado.id,
-            item: 1,
-        });
-        miCarrito.push(id); */
-        miCarrito.push(productos[0]);
-        miCarrito[0].item = 1;
+    if (busqueda == undefined) {
+        miCarrito.push(productos[index]);
     } else {
     busqueda.item += 1;
-    console.log(busqueda.item)
     }
 }
 
 Boton1.addEventListener("click",() => {
-    /* miCarrito.push(productos[0]);
-    console.log(miCarrito) */
-    sumar(productos[0].id)
-    console.log(sumar(productos[0].id))
+    sumar(productos[0].id, 0)
     console.log(miCarrito)
     Toastify({
         text: "Se agrego Red Dead Redemption 2 al carrito",
@@ -79,7 +73,8 @@ Boton1.addEventListener("click",() => {
     localStorage.setItem("Carrito Compra", JSON.stringify(miCarrito));
 })
 Boton2.addEventListener("click",() => {
-    miCarrito.push(productos[1]);
+    sumar(productos[1].id, 1)
+    console.log(miCarrito)
     Toastify({
         text: "Se agrego Need For Spee: Rivals al carrito",
         style: {
@@ -90,7 +85,8 @@ Boton2.addEventListener("click",() => {
     localStorage.setItem("Carrito Compra", JSON.stringify(miCarrito));
 })
 Boton3.addEventListener("click",() => {
-    miCarrito.push(productos[2]);
+    sumar(productos[2].id, 2)
+    console.log(miCarrito)
     Toastify({
         text: "Se agrego Borderlands 3 al carrito",
         style: {
@@ -101,7 +97,8 @@ Boton3.addEventListener("click",() => {
     localStorage.setItem("Carrito Compra", JSON.stringify(miCarrito));
 })
 Boton4.addEventListener("click",() => {
-    miCarrito.push(productos[3]);
+    sumar(productos[3].id, 3)
+    console.log(miCarrito)
     Toastify({
         text: "Se agrego Forza Horizon 5 al carrito",
         style: {
@@ -111,13 +108,13 @@ Boton4.addEventListener("click",() => {
         }).showToast();
     localStorage.setItem("Carrito Compra", JSON.stringify(miCarrito));
 })
-
+console.log(miCarrito)
 let PrecioFinal = 0;
 BotonFin.addEventListener("click",() => {
     let localStorageArray = JSON.parse(localStorage.getItem("Carrito Compra"));
-    const CarroFinal = localStorageArray.map(x => x.nombre + `USD:` + x.precio + "\n");
+    const CarroFinal = localStorageArray.map(x => x.nombre + `(` + x.item + `)` +`USD:` + x.precio + "\n");
     console.log(localStorageArray)
-    localStorageArray.map(x => PrecioFinal += x.precio);
+    localStorageArray.map(x => PrecioFinal += x.precio * x.item);
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             confirmButton: 'btn btn-success',
