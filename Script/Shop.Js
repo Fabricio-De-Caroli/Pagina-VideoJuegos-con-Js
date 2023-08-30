@@ -145,8 +145,11 @@ BotonFin.addEventListener("click",() => {
         swalWithBootstrapButtons.fire(
             'Compra Cancelada',
             'Su compra no se a completado con exito',
-            'error'
-        )
+            'error',
+            localStorage.removeItem("Carrito Compra")
+        ).then(() => {
+            location.reload()
+        })
         }
     })
 })
