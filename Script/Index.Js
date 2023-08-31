@@ -7,7 +7,7 @@ const usuario = {
 }
 const noExistente = document.createElement("p");
 const Registrados = JSON.parse(localStorage.getItem("Registrados"));
-const linkShop = "../Pages/Shop.html"
+const linkShop = "../pages/Shop.html"
 function ruteo(){
     return location.href= linkShop
 }
